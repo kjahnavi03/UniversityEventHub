@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>All Events</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>University Event Hub</h1>
+        <h2>Upcoming Events</h2>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Event Name</th>
+                    <th>Organizer</th>
+                    <th>Location</th>
+                    <th>Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="event : ${events}">
+                    <td th:text="${event.name}">Event Name</td>
+                    <td th:text="${event.organizer}">Organizer</td>
+                    <td th:text="${event.location}">Location</td>
+                    <td th:text="${event.date}">Date</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <a href="/events/add" class="button">Add New Event</a>
+    </div>
+</body>
+</html>
